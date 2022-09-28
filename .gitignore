@@ -1,2 +1,4 @@
 src/__pycache__/
 yaml/Object_example/debug-*
+src/venv/
+.idea/
