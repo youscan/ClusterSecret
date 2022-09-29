@@ -4,6 +4,12 @@ from csHelper import *
 
 csecs = {} # all cluster secrets.
 
+# Connectivity related issue: https://github.com/nolar/kopf/issues/847
+@kopf.on.startup()
+def configure(settings: kopf.OperatorSettings, **_):
+    settings.watching.server_timeout = 60
+    settings.watching.connect_timeout = 60
+
 @kopf.on.delete('clustersecret.io', 'v1', 'clustersecrets')
 def on_delete(spec,uid,body,name,logger=None, **_):
     try:

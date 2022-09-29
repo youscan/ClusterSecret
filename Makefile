@@ -1,7 +1,7 @@
 IMG_NAMESPACE = ysregistryzero.azurecr.io
 IMG_NAME = clustersecret
 IMG_FQNAME = $(IMG_NAMESPACE)/$(IMG_NAME)
-IMG_VERSION = 0.0.8
+IMG_VERSION = 0.0.8.1
 
 .PHONY: container push clean arm-container arm-push arm-clean
 all: container push
